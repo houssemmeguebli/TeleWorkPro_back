@@ -15,7 +15,8 @@ namespace TTProject.Infrastructure.Data
         public TTProjectContext(DbContextOptions<TTProjectContext> options) : base(options)
         {
         }
-
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<ProjectManager> ProjectManagers { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<TTRequest> Requests { get; set; }
 

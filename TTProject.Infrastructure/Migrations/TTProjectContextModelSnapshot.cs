@@ -61,6 +61,11 @@ namespace TTProject.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("userId"));
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(21)
+                        .HasColumnType("nvarchar(21)");
+
                     b.Property<string>("department")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -91,6 +96,32 @@ namespace TTProject.Infrastructure.Migrations
                     b.HasKey("userId");
 
                     b.ToTable("Users");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("User");
+
+                    b.UseTphMappingStrategy();
+                });
+
+            modelBuilder.Entity("TTProject.Core.Entities.Employee", b =>
+                {
+                    b.HasBaseType("TTProject.Core.Entities.User");
+
+                    b.Property<string>("position")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("Employee");
+                });
+
+            modelBuilder.Entity("TTProject.Core.Entities.ProjectManager", b =>
+                {
+                    b.HasBaseType("TTProject.Core.Entities.User");
+
+                    b.Property<string>("porjectName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("ProjectManager");
                 });
 
             modelBuilder.Entity("TTProject.Core.Entities.TTRequest", b =>

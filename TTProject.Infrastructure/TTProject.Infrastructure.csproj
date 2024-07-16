@@ -24,4 +24,12 @@
     <ProjectReference Include="..\TTProject.Core\TTProject.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\.editorconfig" />
+  </ItemGroup>
+
 </Project>
