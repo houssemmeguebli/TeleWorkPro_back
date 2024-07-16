@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TTProject.Presentation.props" />
+</Project>

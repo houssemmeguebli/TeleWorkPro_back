@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "TTProject.Application/1.0.0": {
+        "dependencies": {
+          "TTProject.Core": "1.0.0"
+        },
+        "runtime": {
+          "TTProject.Application.dll": {}
+        }
+      },
+      "TTProject.Core/1.0.0": {
+        "runtime": {
+          "TTProject.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TTProject.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TTProject.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

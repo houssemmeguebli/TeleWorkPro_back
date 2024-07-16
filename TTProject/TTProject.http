@@ -1,0 +1,6 @@
+@TTProject_HostAddress = http://localhost:5073
+
+GET {{TTProject_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

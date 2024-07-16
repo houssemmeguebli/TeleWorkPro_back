@@ -1,0 +1,15 @@
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Application\bin\Debug\net8.0\TTProject.Application.deps.json
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Application\bin\Debug\net8.0\TTProject.Application.dll
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Application\bin\Debug\net8.0\TTProject.Application.pdb
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Application\bin\Debug\net8.0\TTProject.Core.dll
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Application\bin\Debug\net8.0\TTProject.Core.pdb
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Application\obj\Debug\net8.0\TTProject.Application.csproj.AssemblyReference.cache
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Application\obj\Debug\net8.0\TTProject.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Application\obj\Debug\net8.0\TTProject.Application.AssemblyInfoInputs.cache
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Application\obj\Debug\net8.0\TTProject.Application.AssemblyInfo.cs
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Application\obj\Debug\net8.0\TTProject.Application.csproj.CoreCompileInputs.cache
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Application\obj\Debug\net8.0\TTProject.Application.csproj.CopyComplete
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Application\obj\Debug\net8.0\TTProject.Application.dll
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Application\obj\Debug\net8.0\refint\TTProject.Application.dll
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Application\obj\Debug\net8.0\TTProject.Application.pdb
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Application\obj\Debug\net8.0\ref\TTProject.Application.dll

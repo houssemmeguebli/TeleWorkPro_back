@@ -1,0 +1,17 @@
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\bin\Debug\net8.0\TTProject.Infrastructure.deps.json
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\bin\Debug\net8.0\TTProject.Infrastructure.runtimeconfig.json
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\bin\Debug\net8.0\TTProject.Infrastructure.dll
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\bin\Debug\net8.0\TTProject.Infrastructure.pdb
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\bin\Debug\net8.0\TTProject.Core.dll
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\bin\Debug\net8.0\TTProject.Core.pdb
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\obj\Debug\net8.0\TTProject.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\obj\Debug\net8.0\TTProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\obj\Debug\net8.0\TTProject.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\obj\Debug\net8.0\TTProject.Infrastructure.AssemblyInfo.cs
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\obj\Debug\net8.0\TTProject.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\obj\Debug\net8.0\TTProject.Infrastructure.csproj.CopyComplete
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\obj\Debug\net8.0\TTProject.Infrastructure.dll
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\obj\Debug\net8.0\refint\TTProject.Infrastructure.dll
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\obj\Debug\net8.0\TTProject.Infrastructure.pdb
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\obj\Debug\net8.0\TTProject.Infrastructure.genruntimeconfig.cache
+C:\Users\megbl\Desktop\Stage ingenieur\TTProject\TTProject.Infrastructure\obj\Debug\net8.0\ref\TTProject.Infrastructure.dll
