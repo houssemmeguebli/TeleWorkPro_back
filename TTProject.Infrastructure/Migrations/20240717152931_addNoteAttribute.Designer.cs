@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TTProject.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using TTProject.Infrastructure.Data;
 namespace TTProject.Infrastructure.Migrations
 {
     [DbContext(typeof(TTProjectContext))]
-    partial class TTProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20240717152931_addNoteAttribute")]
+    partial class addNoteAttribute
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,6 +41,7 @@ namespace TTProject.Infrastructure.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("note")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("startDate")

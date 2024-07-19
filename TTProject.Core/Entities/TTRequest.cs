@@ -23,6 +23,9 @@ namespace TTProject.Core.Entities
         public DateTime endDate { get; set; }
         public string comment { get; set; }
 
+        public string? note { get; set; }
+
+
         [ForeignKey(nameof(User))]
         public long userId { get; set; }
 

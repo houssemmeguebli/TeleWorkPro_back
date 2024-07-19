@@ -52,26 +52,25 @@ namespace TTProject.Presentation.Controllers
                 return BadRequest(ModelState);
             }
 
-            // Retrieve the user who is creating the request
-            var user = await _userService.GetByIdAsync(request.userId);
-            if (user == null)
-            {
-                return NotFound("User not found");
-            }
+  
+            var staticRole = Role.Employee;  // Replace with Role.ProjectManager or Role.Employee for different scenarios
 
-            // Set the request status based on the user role
-            if (user.role == Role.ProjectManager)
+            if (staticRole == Role.ProjectManager)
             {
                 request.status = Status.Approved;
             }
-            else if (user.role == Role.Employee)
+            else if (staticRole == Role.Employee)
             {
                 request.status = Status.Pending;
             }
 
-            await _requestService.AddAsync(request);
+         
+             await _requestService.AddAsync(request);
+
+            // Simulate returning CreatedAtAction
             return CreatedAtAction(nameof(GetRequestById), new { requestId = request.RequestId }, request);
         }
+
 
         [HttpGet("{requestId}")]
         public async Task<ActionResult<TTRequest>> GetRequestById(long requestId)
@@ -108,7 +107,8 @@ namespace TTProject.Presentation.Controllers
             existingRequest.startDate = updatedRequest.startDate;
             existingRequest.endDate = updatedRequest.endDate;
             existingRequest.comment = updatedRequest.comment;
-          
+            existingRequest.note = updatedRequest.note;
+
 
             await _requestService.UpdateAsync(existingRequest);
 
