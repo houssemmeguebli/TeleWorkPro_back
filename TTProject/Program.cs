@@ -4,6 +4,7 @@ using TTProject.Core.Interfaces;
 using TTProject.Infrastructure.Data;
 using TTProject.Application.Services;
 using TTProject.Infrastructure.Repositories;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,8 @@ builder.Services.AddSwaggerGen();
 // Add the DbContext to the container
 builder.Services.AddDbContext<TTProjectContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<TTProjectContext>();
 
 // Add generic and specific services
 builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
@@ -52,6 +55,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+//hello form the new branch
 
 app.UseHttpsRedirection();
 app.UseAuthorization();

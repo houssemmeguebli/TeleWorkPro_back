@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject\\TTProject.Presentation.csproj": {}
+    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject\\TTProject.Presentation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Application\\TTProject.Application.csproj": {
+    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Application\\TTProject.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Application\\TTProject.Application.csproj",
+        "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Application\\TTProject.Application.csproj",
         "projectName": "TTProject.Application",
-        "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Application\\TTProject.Application.csproj",
+        "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Application\\TTProject.Application.csproj",
         "packagesPath": "C:\\Users\\megbl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Application\\obj\\",
+        "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj": {
-                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj"
+              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Core\\TTProject.Core.csproj": {
+                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Core\\TTProject.Core.csproj"
               }
             }
           }
@@ -67,14 +67,14 @@
         }
       }
     },
-    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj": {
+    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Core\\TTProject.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj",
+        "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Core\\TTProject.Core.csproj",
         "projectName": "TTProject.Core",
-        "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj",
+        "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Core\\TTProject.Core.csproj",
         "packagesPath": "C:\\Users\\megbl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\obj\\",
+        "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -106,6 +106,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -126,14 +132,14 @@
         }
       }
     },
-    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj": {
+    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj",
         "projectName": "TTProject.Infrastructure",
-        "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\megbl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -154,8 +160,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj": {
-                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj"
+              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Core\\TTProject.Core.csproj": {
+                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Core\\TTProject.Core.csproj"
               }
             }
           }
@@ -170,29 +176,37 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             },
             "System.Diagnostics.Tools": {
               "target": "Package",
@@ -219,14 +233,14 @@
         }
       }
     },
-    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject\\TTProject.Presentation.csproj": {
+    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject\\TTProject.Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject\\TTProject.Presentation.csproj",
+        "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject\\TTProject.Presentation.csproj",
         "projectName": "TTProject.Presentation",
-        "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject\\TTProject.Presentation.csproj",
+        "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject\\TTProject.Presentation.csproj",
         "packagesPath": "C:\\Users\\megbl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject\\obj\\",
+        "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -247,14 +261,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Application\\TTProject.Application.csproj": {
-                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Application\\TTProject.Application.csproj"
+              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Application\\TTProject.Application.csproj": {
+                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Application\\TTProject.Application.csproj"
               },
-              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj": {
-                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj"
+              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Core\\TTProject.Core.csproj": {
+                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Core\\TTProject.Core.csproj"
               },
-              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj"
+              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj"
               }
             }
           }
@@ -269,19 +283,49 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.7, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

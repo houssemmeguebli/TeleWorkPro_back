@@ -31,3 +31,16 @@ C:\Users\megbl\Desktop\Stage ingenieur\New\TTProject_back-main\TTProject.Core\ob
 C:\Users\megbl\Desktop\Stage ingenieur\New\TTProject_back-main\TTProject.Core\obj\Debug\net8.0\refint\TTProject.Core.dll
 C:\Users\megbl\Desktop\Stage ingenieur\New\TTProject_back-main\TTProject.Core\obj\Debug\net8.0\TTProject.Core.pdb
 C:\Users\megbl\Desktop\Stage ingenieur\New\TTProject_back-main\TTProject.Core\obj\Debug\net8.0\ref\TTProject.Core.dll
+C:\Users\megbl\Desktop\Stage ingenieur\GitHub\TTProject_back\TTProject.Core\bin\Debug\net8.0\TTProject.Core.deps.json
+C:\Users\megbl\Desktop\Stage ingenieur\GitHub\TTProject_back\TTProject.Core\bin\Debug\net8.0\TTProject.Core.dll
+C:\Users\megbl\Desktop\Stage ingenieur\GitHub\TTProject_back\TTProject.Core\bin\Debug\net8.0\TTProject.Core.pdb
+C:\Users\megbl\Desktop\Stage ingenieur\GitHub\TTProject_back\TTProject.Core\obj\Debug\net8.0\TTProject.Core.csproj.AssemblyReference.cache
+C:\Users\megbl\Desktop\Stage ingenieur\GitHub\TTProject_back\TTProject.Core\obj\Debug\net8.0\TTProject.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\megbl\Desktop\Stage ingenieur\GitHub\TTProject_back\TTProject.Core\obj\Debug\net8.0\TTProject.Core.AssemblyInfoInputs.cache
+C:\Users\megbl\Desktop\Stage ingenieur\GitHub\TTProject_back\TTProject.Core\obj\Debug\net8.0\TTProject.Core.AssemblyInfo.cs
+C:\Users\megbl\Desktop\Stage ingenieur\GitHub\TTProject_back\TTProject.Core\obj\Debug\net8.0\TTProject.Core.csproj.CoreCompileInputs.cache
+C:\Users\megbl\Desktop\Stage ingenieur\GitHub\TTProject_back\TTProject.Core\obj\Debug\net8.0\TTProject.Core.sourcelink.json
+C:\Users\megbl\Desktop\Stage ingenieur\GitHub\TTProject_back\TTProject.Core\obj\Debug\net8.0\TTProject.Core.dll
+C:\Users\megbl\Desktop\Stage ingenieur\GitHub\TTProject_back\TTProject.Core\obj\Debug\net8.0\refint\TTProject.Core.dll
+C:\Users\megbl\Desktop\Stage ingenieur\GitHub\TTProject_back\TTProject.Core\obj\Debug\net8.0\TTProject.Core.pdb
+C:\Users\megbl\Desktop\Stage ingenieur\GitHub\TTProject_back\TTProject.Core\obj\Debug\net8.0\ref\TTProject.Core.dll

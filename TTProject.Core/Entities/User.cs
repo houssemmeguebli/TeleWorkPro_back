@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +14,7 @@ namespace TTProject.Core.Entities
         ProjectManager, Employee
     }
 
-    public class User
+    public class User : IdentityUser<long>
     {
         [Key]
         public long userId { get; set; }
