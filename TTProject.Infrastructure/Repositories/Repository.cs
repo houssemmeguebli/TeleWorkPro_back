@@ -13,9 +13,9 @@ namespace TTProject.Infrastructure.Repositories
     public class Repository<T> : IRepository<T> where T : class
 
     {
-        private readonly TTProjectContext _context;
+        private readonly TTProjectContextOld _context;
         private readonly DbSet<T> _set;
-        public Repository(TTProjectContext context)
+        public Repository(TTProjectContextOld context)
         {
             _context = context;
             _set = context.Set<T>();

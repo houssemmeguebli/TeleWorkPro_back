@@ -12,9 +12,9 @@ namespace TTProject.Infrastructure.Repositories
 {
     public class EmployeeRepository : Repository<Employee>, IEmplyeeRepository 
     {
-        private readonly TTProjectContext _context;
+        private readonly TTProjectContextOld _context;
 
-        public EmployeeRepository(TTProjectContext context) : base(context)
+        public EmployeeRepository(TTProjectContextOld context) : base(context)
         {
             _context = context;
         }

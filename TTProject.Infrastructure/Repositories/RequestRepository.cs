@@ -11,7 +11,7 @@ namespace TTProject.Infrastructure.Repositories
 {
     public class RequestRepository : Repository<TTRequest>, IRequestRepository
     {
-        public RequestRepository(TTProjectContext context) : base(context)
+        public RequestRepository(TTProjectContextOld context) : base(context)
         {
         }
     }

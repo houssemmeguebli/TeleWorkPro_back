@@ -54,7 +54,7 @@ namespace TTProject.Presentation.Controllers
                 }
 
                 await _projectManagerService.AddAsync(projectManager);
-                return CreatedAtAction(nameof(GetUserById), new { userId = projectManager.userId }, projectManager);
+                return CreatedAtAction(nameof(GetUserById), new { userId = projectManager.Id }, projectManager);
             }
             catch (Exception ex)
             {
@@ -73,7 +73,6 @@ namespace TTProject.Presentation.Controllers
 
             existingProjectManager.phone = updateprojectManager.phone;
 
-            existingProjectManager.password = updateprojectManager.password;
             existingProjectManager.role = updateprojectManager.role;
             existingProjectManager.department = updateprojectManager.department;
             existingProjectManager.firstName = updateprojectManager.firstName;

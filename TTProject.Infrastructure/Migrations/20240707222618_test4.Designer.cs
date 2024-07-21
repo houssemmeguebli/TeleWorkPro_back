@@ -11,7 +11,7 @@ using TTProject.Infrastructure.Data;
 
 namespace TTProject.Infrastructure.Migrations
 {
-    [DbContext(typeof(TTProjectContext))]
+    [DbContext(typeof(TTProjectContextOld))]
     [Migration("20240707222618_test4")]
     partial class test4
     {

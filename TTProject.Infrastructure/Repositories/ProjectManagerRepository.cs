@@ -12,16 +12,16 @@ namespace TTProject.Infrastructure.Repositories
 {
     public class ProjectManagerRepository : Repository<ProjectManager>, IProjectManagerRepository
     {
-        private readonly TTProjectContext _context;
+        private readonly TTProjectContextOld _context;
 
-        public ProjectManagerRepository(TTProjectContext context) : base(context)
+        public ProjectManagerRepository(TTProjectContextOld context) : base(context)
         {
             _context = context;
         }
         public async Task<(string firstName, string lastName)> GetUserByNameAsync(long userID)
         {
             var user = await _context.Users
-                    .Where(u => u.userId == userID)
+                    .Where(u => u.Id == userID)
                     .Select(u => new { u.firstName, u.lastName })
                     .FirstOrDefaultAsync();
 

@@ -43,7 +43,7 @@ namespace TTProject.Presentation.Controllers
                 }
 
                 await _employeeService.AddAsync(employee);
-                return CreatedAtAction(nameof(GetUserById), new { employeeId = employee.userId }, employee);
+                return CreatedAtAction(nameof(GetUserById), new { employeeId = employee.Id }, employee);
             }
             catch (Exception ex)
             {
@@ -72,8 +72,7 @@ namespace TTProject.Presentation.Controllers
             }
 
             existingEmployee.phone = updatedEmployee.phone;
-            existingEmployee.email = updatedEmployee.email;
-            existingEmployee.password = updatedEmployee.password;
+      
             existingEmployee.role = updatedEmployee.role;
             existingEmployee.department = updatedEmployee.department;
             existingEmployee.firstName = updatedEmployee.firstName;
