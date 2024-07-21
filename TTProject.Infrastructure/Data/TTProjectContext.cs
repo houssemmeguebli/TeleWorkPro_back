@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,8 @@ using TTProject.Core.Entities;
 
 namespace TTProject.Infrastructure.Data
 {
-    public class TTProjectContext : DbContext
+    public class TTProjectContext : IdentityDbContext
+
     {
 
         public TTProjectContext(DbContextOptions<TTProjectContext> options) : base(options)

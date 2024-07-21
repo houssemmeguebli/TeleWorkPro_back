@@ -10,11 +10,11 @@ using TTProject.Infrastructure.Data;
 
 namespace TTProject.Infrastructure.Repositories
 {
-    public class UserRepository : Repository<User>, IUserRepository
+    public class ProjectManagerRepository : Repository<ProjectManager>, IProjectManagerRepository
     {
         private readonly TTProjectContext _context;
 
-        public UserRepository(TTProjectContext context) : base(context)
+        public ProjectManagerRepository(TTProjectContext context) : base(context)
         {
             _context = context;
         }

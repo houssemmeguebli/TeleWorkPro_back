@@ -7,7 +7,7 @@ using TTProject.Core.Entities;
 
 namespace TTProject.Core.Interfaces
 {
-    public interface IUserRepository : IRepository<User>
+    public interface IProjectManagerService : IService<ProjectManager>
     {
         Task<(string firstName, string lastName)> GetUserByNameAsync(long userID);
     }

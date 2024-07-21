@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject\\TTProject.Presentation.csproj": {}
+    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject\\TTProject.Presentation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Application\\TTProject.Application.csproj": {
+    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Application\\TTProject.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Application\\TTProject.Application.csproj",
+        "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Application\\TTProject.Application.csproj",
         "projectName": "TTProject.Application",
-        "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Application\\TTProject.Application.csproj",
+        "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Application\\TTProject.Application.csproj",
         "packagesPath": "C:\\Users\\megbl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Application\\obj\\",
+        "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Core\\TTProject.Core.csproj": {
-                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Core\\TTProject.Core.csproj"
+              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj": {
+                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj"
               }
             }
           }
@@ -67,14 +67,14 @@
         }
       }
     },
-    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Core\\TTProject.Core.csproj": {
+    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Core\\TTProject.Core.csproj",
+        "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj",
         "projectName": "TTProject.Core",
-        "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Core\\TTProject.Core.csproj",
+        "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj",
         "packagesPath": "C:\\Users\\megbl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Core\\obj\\",
+        "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -126,14 +126,14 @@
         }
       }
     },
-    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj": {
+    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj",
         "projectName": "TTProject.Infrastructure",
-        "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\megbl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -154,8 +154,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Core\\TTProject.Core.csproj": {
-                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Core\\TTProject.Core.csproj"
+              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj": {
+                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj"
               }
             }
           }
@@ -170,6 +170,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.6, )"
@@ -215,14 +219,14 @@
         }
       }
     },
-    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject\\TTProject.Presentation.csproj": {
+    "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject\\TTProject.Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject\\TTProject.Presentation.csproj",
+        "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject\\TTProject.Presentation.csproj",
         "projectName": "TTProject.Presentation",
-        "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject\\TTProject.Presentation.csproj",
+        "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject\\TTProject.Presentation.csproj",
         "packagesPath": "C:\\Users\\megbl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject\\obj\\",
+        "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -243,14 +247,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Application\\TTProject.Application.csproj": {
-                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Application\\TTProject.Application.csproj"
+              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Application\\TTProject.Application.csproj": {
+                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Application\\TTProject.Application.csproj"
               },
-              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Core\\TTProject.Core.csproj": {
-                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Core\\TTProject.Core.csproj"
+              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj": {
+                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj"
               },
-              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\TTProject\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj"
+              "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj"
               }
             }
           }

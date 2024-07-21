@@ -13,9 +13,9 @@ namespace TTProject.Presentation.Controllers
     {
         private readonly IRequestService _requestService;
 
-        private readonly IUserService _userService;
+        private readonly IProjectManagerService _userService;
 
-        public RequestController(IRequestService requestService, IUserService userService)
+        public RequestController(IRequestService requestService, IProjectManagerService userService)
         {
             _requestService = requestService;
             _userService = userService;
