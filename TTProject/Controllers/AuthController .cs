@@ -42,7 +42,7 @@ namespace TTProject.Presentation.Controllers
                     Email = model.Email,
                     firstName = model.FirstName,
                     lastName = model.LastName,
-                    phone = model.phone,
+                    PhoneNumber = model.phone,
                     department = model.department,
                     projectName = model.projectName
                 };

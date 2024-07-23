@@ -71,8 +71,8 @@ namespace TTProject.Presentation.Controllers
                 return NotFound("There is no employee with this ID");
             }
 
-            existingEmployee.phone = updatedEmployee.phone;
-      
+            existingEmployee.PhoneNumber = updatedEmployee.PhoneNumber;
+     
             existingEmployee.role = updatedEmployee.role;
             existingEmployee.department = updatedEmployee.department;
             existingEmployee.firstName = updatedEmployee.firstName;
@@ -93,6 +93,18 @@ namespace TTProject.Presentation.Controllers
                 return NotFound($"No requests found for employee with ID {employeeId}");
             }
             return Ok(requests);
+        }
+        [HttpDelete("{userId}")]
+        public async Task<IActionResult> DeleteProjectManagers(long userId)
+        {
+            var employees = await _employeeService.GetByIdAsync(userId);
+            if (employees == null)
+            {
+                return NotFound();
+            }
+
+            await _employeeService.DeleteAsync(employees);
+            return NoContent();
         }
     }
 }

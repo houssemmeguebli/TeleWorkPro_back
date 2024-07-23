@@ -71,8 +71,7 @@ namespace TTProject.Presentation.Controllers
                 return NotFound("There is no user with this id");
             }
 
-            existingProjectManager.phone = updateprojectManager.phone;
-
+            existingProjectManager.PhoneNumber = updateprojectManager.PhoneNumber;
             existingProjectManager.role = updateprojectManager.role;
             existingProjectManager.department = updateprojectManager.department;
             existingProjectManager.firstName = updateprojectManager.firstName;
