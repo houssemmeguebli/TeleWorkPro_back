@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TTProject.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f0345c32090946eb3cd8d7fb2935c038154fd4a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+162cf4c9a45baf41ad0a3a9d0c0172ca5329b51a")]
 [assembly: System.Reflection.AssemblyProductAttribute("TTProject.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TTProject.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

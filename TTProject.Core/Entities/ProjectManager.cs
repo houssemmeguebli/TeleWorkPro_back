@@ -8,6 +8,6 @@ namespace TTProject.Core.Entities
 {
     public class ProjectManager : User
     {
-        public string porjectName { get; set; }
+        public string projectName { get; set; }
     }
 }

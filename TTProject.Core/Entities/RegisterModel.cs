@@ -15,6 +15,7 @@ namespace TTProject.Core.Entities
         public string phone { get; set; }
         public Role role { get; set; }
         public string department { get; set; }
-
+        public string projectName { get; set; }
+        public string position { get; set; }
     }
 }
