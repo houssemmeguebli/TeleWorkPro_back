@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "DZvGHIqKFWjRFZgVil1JE9rX/XNYm5uiCgYPcYaKueE3Hie7vHCrQQy6QevByf49rd6DDkZgYkWzJqVl4goYQQ==",
+  "dgSpecHash": "98xhzMY73/PIKP1Q47Q5pSypXQzqxkb4AxYSrNzVQzyjef4k3eKJ1AB59+79X0zquHaJ9WaZ5F11fmRb9zm5VQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Application\\TTProject.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\megbl\\.nuget\\packages\\bouncycastle.cryptography\\2.4.0\\bouncycastle.cryptography.2.4.0.nupkg.sha512",
+    "C:\\Users\\megbl\\.nuget\\packages\\mailkit\\4.7.1.1\\mailkit.4.7.1.1.nupkg.sha512",
     "C:\\Users\\megbl\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.7\\microsoft.aspnetcore.cryptography.internal.8.0.7.nupkg.sha512",
     "C:\\Users\\megbl\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.7\\microsoft.aspnetcore.cryptography.keyderivation.8.0.7.nupkg.sha512",
     "C:\\Users\\megbl\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\8.0.7\\microsoft.aspnetcore.identity.entityframeworkcore.8.0.7.nupkg.sha512",
@@ -21,7 +23,10 @@
     "C:\\Users\\megbl\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0\\microsoft.extensions.logging.8.0.0.nupkg.sha512",
     "C:\\Users\\megbl\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\megbl\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
-    "C:\\Users\\megbl\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512"
+    "C:\\Users\\megbl\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\megbl\\.nuget\\packages\\mimekit\\4.7.1\\mimekit.4.7.1.nupkg.sha512",
+    "C:\\Users\\megbl\\.nuget\\packages\\system.formats.asn1\\8.0.1\\system.formats.asn1.8.0.1.nupkg.sha512",
+    "C:\\Users\\megbl\\.nuget\\packages\\system.security.cryptography.pkcs\\8.0.0\\system.security.cryptography.pkcs.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }

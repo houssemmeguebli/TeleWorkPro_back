@@ -20,7 +20,7 @@ namespace TTProject.Core.Entities
     
         public string firstName { get; set; }
         public string lastName { get; set; }
-  
+ 
         public Role role { get; set; }
         public string department { get; set; }
 

@@ -46,6 +46,15 @@ builder.Services.AddScoped<IRequestService, RequestService>();
 builder.Services.AddScoped<IEmplyeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
+// Load EmailSettings from configuration
+var emailSettings = builder.Configuration.GetSection("EmailSettings");
+
+// Add EmailService to the service collection
+builder.Services.AddSingleton<IEmailService>(new EmailService(
+    emailSettings["Username"],
+    emailSettings["Password"]
+));
+
 // Ajoutez les services UserManager et SignInManager
 builder.Services.AddScoped<UserManager<User>>();
 builder.Services.AddScoped<SignInManager<User>>();

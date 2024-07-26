@@ -9,6 +9,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace TTProject.Presentation.Controllers
 {
@@ -44,7 +45,9 @@ namespace TTProject.Presentation.Controllers
                     lastName = model.LastName,
                     PhoneNumber = model.phone,
                     department = model.department,
-                    projectName = model.projectName
+                    projectName = model.projectName,
+                    role = model.role,
+
                 };
 
                 var result = await _userManager.CreateAsync(user, model.Password);
@@ -110,36 +113,44 @@ namespace TTProject.Presentation.Controllers
         }
 
 
-
         private string GenerateJwtToken(User user, IList<string> roles)
-            {
-                var claims = new List<Claim>
         {
-            new Claim(JwtRegisteredClaimNames.Sub, user.UserName), // You may want to use user.Id if that's your ID claim
-            new Claim(JwtRegisteredClaimNames.Email, user.Email),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            new Claim("firstName", user.firstName ?? ""),
-            new Claim("lastName", user.lastName ?? ""),
-            new Claim("department", user.department ?? "")
-        };
+            // Create a list of claims
+            var claims = new List<Claim>
+    {
+        new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
+        new Claim(JwtRegisteredClaimNames.Email, user.Email),
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+        new Claim("id", user.Id.ToString()),  // Include the user's id
+        new Claim("role", user.role.ToString()),  
+        new Claim("firstName", user.firstName ?? ""),
+        new Claim("lastName", user.lastName ?? ""),
+        new Claim("department", user.department ?? "")
+    };
 
-                foreach (var role in roles)
-                {
-                    claims.Add(new Claim(ClaimTypes.Role, role));
-                }
-
-                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configurations["Jwt:Key"]));
-                var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-                var token = new JwtSecurityToken(
-                    issuer: _configurations["Jwt:Issuer"],
-                    audience: _configurations["Jwt:Issuer"],
-                    claims: claims,
-                    expires: DateTime.Now.AddMinutes(30),
-                    signingCredentials: creds);
-
-                return new JwtSecurityTokenHandler().WriteToken(token);
+            // Add roles as claims
+            foreach (var role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
             }
+
+            // Create a symmetric security key and credentials
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configurations["Jwt:Key"]));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            // Create the JWT token
+            var token = new JwtSecurityToken(
+                issuer: _configurations["Jwt:Issuer"],
+                audience: _configurations["Jwt:Issuer"],
+                claims: claims,
+                expires: DateTime.Now.AddMinutes(30),
+                signingCredentials: creds);
+
+            // Write and return the token
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+
 
     }
 }

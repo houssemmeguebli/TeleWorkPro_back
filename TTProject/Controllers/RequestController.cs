@@ -44,32 +44,35 @@ namespace TTProject.Presentation.Controllers
             return CreatedAtAction(nameof(GetRequestById), new { requestId = request.RequestId }, request);
         }
         */
-        [HttpPost]
-        public async Task<ActionResult<TTRequest>> CreateRequest(TTRequest request)
+        [HttpPost("{userRole}")]
+        public async Task<ActionResult<TTRequest>> CreateRequest(TTRequest request,int userRole)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-  
-            var staticRole = Role.Employee;  // Replace with Role.ProjectManager or Role.Employee for different scenarios
-
-            if (staticRole == Role.ProjectManager)
+            // Determine the status based on the user's role
+            if (userRole == 0)
             {
                 request.status = Status.Approved;
             }
-            else if (staticRole == Role.Employee)
+            else if (userRole == 1)
             {
                 request.status = Status.Pending;
             }
+            else
+            {
+                // Handle cases where the role is not recognized
+                return BadRequest("User role is not recognized.");
+            }
 
-         
-             await _requestService.AddAsync(request);
+            await _requestService.AddAsync(request);
 
             // Simulate returning CreatedAtAction
             return CreatedAtAction(nameof(GetRequestById), new { requestId = request.RequestId }, request);
         }
+
 
 
         [HttpGet("{requestId}")]
