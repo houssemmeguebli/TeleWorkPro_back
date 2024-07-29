@@ -14,6 +14,15 @@ namespace TTProject.Core.Entities
     {
         ProjectManager, Employee
     }
+    public enum Gender
+    {
+        Male, Female
+    }
+    public enum UserStatus
+    {
+        Inactive , Active 
+    }
+
 
     public class User : IdentityUser<long>
     {
@@ -23,6 +32,11 @@ namespace TTProject.Core.Entities
  
         public Role role { get; set; }
         public string department { get; set; }
+
+        public DateTime dateOfbirth { get; set; }
+        public Gender Gender { get; set; }
+        public UserStatus Status { get; set; }
+
 
         public IList<TTRequest>? Requests { get; set; }
     }

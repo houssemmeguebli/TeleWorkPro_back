@@ -17,5 +17,8 @@ namespace TTProject.Core.Entities
         public string department { get; set; }
         public string projectName { get; set; }
         public string position { get; set; }
+        public Gender Gender { get; set; }
+        public DateTime dateOfbirth { get; set; }
+
     }
 }

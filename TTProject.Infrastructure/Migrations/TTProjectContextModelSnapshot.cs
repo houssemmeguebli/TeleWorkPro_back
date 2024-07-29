@@ -216,6 +216,9 @@ namespace TTProject.Infrastructure.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -248,6 +251,9 @@ namespace TTProject.Infrastructure.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<DateTime>("dateOfbirth")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("department")
                         .IsRequired()

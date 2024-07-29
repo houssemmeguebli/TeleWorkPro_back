@@ -47,6 +47,8 @@ namespace TTProject.Presentation.Controllers
                     department = model.department,
                     projectName = model.projectName,
                     role = model.role,
+                    Gender = model.Gender,
+                    dateOfbirth = model.dateOfbirth,
 
                 };
 
@@ -71,7 +73,10 @@ namespace TTProject.Presentation.Controllers
                     lastName = model.LastName,
                     PhoneNumber = model.phone,
                     department = model.department,
-                    position = model.position
+                    position = model.position,
+                    role = model.role,
+                    Gender = model.Gender,
+                    dateOfbirth = model.dateOfbirth,
                 };
 
                 var result = await _userManager.CreateAsync(user, model.Password);
@@ -124,6 +129,7 @@ namespace TTProject.Presentation.Controllers
         new Claim("id", user.Id.ToString()),  // Include the user's id
         new Claim("role", user.role.ToString()),  
         new Claim("firstName", user.firstName ?? ""),
+         
         new Claim("lastName", user.lastName ?? ""),
         new Claim("department", user.department ?? "")
     };
@@ -150,6 +156,24 @@ namespace TTProject.Presentation.Controllers
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
+        [HttpPost("change-password/{userId}")]
+        public async Task<IActionResult> ChangePassword(long userId, [FromBody] ChangePasswordModel model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var user = await _userManager.FindByIdAsync(userId.ToString());
+
+            if (user == null)
+                return NotFound("User not found.");
+
+            var result = await _userManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
+
+            if (result.Succeeded)
+                return Ok("Password changed successfully.");
+
+            return BadRequest(result.Errors);
+        }
 
 
     }

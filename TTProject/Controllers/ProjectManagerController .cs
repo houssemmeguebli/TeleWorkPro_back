@@ -76,6 +76,8 @@ namespace TTProject.Presentation.Controllers
             existingProjectManager.department = updateprojectManager.department;
             existingProjectManager.firstName = updateprojectManager.firstName;
             existingProjectManager.lastName = updateprojectManager.lastName;
+            existingProjectManager.Gender = updateprojectManager.Gender;
+            existingProjectManager.dateOfbirth = updateprojectManager.dateOfbirth;
 
             await _projectManagerService.UpdateAsync(existingProjectManager);
 

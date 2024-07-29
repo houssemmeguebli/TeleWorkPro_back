@@ -78,7 +78,8 @@ namespace TTProject.Presentation.Controllers
             existingEmployee.firstName = updatedEmployee.firstName;
             existingEmployee.lastName = updatedEmployee.lastName;
             existingEmployee.position = updatedEmployee.position;
-
+            existingEmployee.Gender = updatedEmployee.Gender;
+            existingEmployee.dateOfbirth = updatedEmployee.dateOfbirth;
             await _employeeService.UpdateAsync(existingEmployee);
 
             return NoContent();
@@ -94,8 +95,9 @@ namespace TTProject.Presentation.Controllers
             }
             return Ok(requests);
         }
+
         [HttpDelete("{userId}")]
-        public async Task<IActionResult> DeleteProjectManagers(long userId)
+        public async Task<IActionResult> DeleteEmployee(long userId)
         {
             var employees = await _employeeService.GetByIdAsync(userId);
             if (employees == null)
