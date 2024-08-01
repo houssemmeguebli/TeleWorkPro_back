@@ -62,28 +62,49 @@ namespace TTProject.Presentation.Controllers
             return Ok(employees);
         }
 
-        [HttpPut("{employeeId}")]
-        public async Task<IActionResult> UpdateUser(long employeeId, Employee updatedEmployee)
-        {
-            var existingEmployee = await _employeeService.GetByIdAsync(employeeId);
-            if (existingEmployee == null)
-            {
-                return NotFound("There is no employee with this ID");
-            }
+       [HttpPut("{employeeId}")]
+public async Task<IActionResult> UpdateUser(long employeeId, Employee updatedEmployee)
+{
+    var existingEmployee = await _employeeService.GetByIdAsync(employeeId);
+    if (existingEmployee == null)
+    {
+        return NotFound("There is no employee with this ID");
+    }
 
-            existingEmployee.PhoneNumber = updatedEmployee.PhoneNumber;
+    // Only update fields that are provided in updatedEmployee
+    if (updatedEmployee.PhoneNumber != null)
+        existingEmployee.PhoneNumber = updatedEmployee.PhoneNumber;
      
-            existingEmployee.role = updatedEmployee.role;
-            existingEmployee.department = updatedEmployee.department;
-            existingEmployee.firstName = updatedEmployee.firstName;
-            existingEmployee.lastName = updatedEmployee.lastName;
-            existingEmployee.position = updatedEmployee.position;
-            existingEmployee.Gender = updatedEmployee.Gender;
-            existingEmployee.dateOfbirth = updatedEmployee.dateOfbirth;
-            await _employeeService.UpdateAsync(existingEmployee);
+    if (updatedEmployee.role != null)
+        existingEmployee.role = updatedEmployee.role;
 
-            return NoContent();
-        }
+    if (updatedEmployee.department != null)
+        existingEmployee.department = updatedEmployee.department;
+
+    if (updatedEmployee.firstName != null)
+        existingEmployee.firstName = updatedEmployee.firstName;
+
+    if (updatedEmployee.lastName != null)
+        existingEmployee.lastName = updatedEmployee.lastName;
+
+    if (updatedEmployee.position != null)
+        existingEmployee.position = updatedEmployee.position;
+
+    if (updatedEmployee.Gender != null)
+        existingEmployee.Gender = updatedEmployee.Gender;
+    if(updatedEmployee.PhoneNumber!= null)
+                existingEmployee.PhoneNumber = updatedEmployee.PhoneNumber;
+
+    if (updatedEmployee.dateOfbirth != null)
+        existingEmployee.dateOfbirth = updatedEmployee.dateOfbirth;
+
+    if (updatedEmployee.UserStatus != null)
+        existingEmployee.UserStatus = updatedEmployee.UserStatus;
+
+    await _employeeService.UpdateAsync(existingEmployee);
+
+    return NoContent();
+}
 
         [HttpGet("{employeeId}/requests")]
         public async Task<ActionResult<IEnumerable<Request>>> GetRequestsByEmployeeId(long employeeId)

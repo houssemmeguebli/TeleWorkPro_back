@@ -10,5 +10,6 @@ namespace TTProject.Core.Interfaces
     public interface IProjectManagerRepository : IRepository<ProjectManager>
     {
         Task<(string firstName, string lastName)> GetUserByNameAsync(long userID);
+        Task<IEnumerable<TTRequest>> GetRequestsByManagerIdAsync(long managerId);
     }
 }

@@ -34,6 +34,19 @@ namespace TTProject.Infrastructure.Repositories
 
 
         }
+        public async Task<IEnumerable<TTRequest>> GetRequestsByManagerIdAsync(long managerId)
+        {
+            var requests = await _context.Requests
+                .Where(r => r.userId == managerId)
+                .ToListAsync();
+
+            if (requests == null || !requests.Any())
+            {
+                throw new Exception("No requests found for this employee.");
+            }
+
+            return requests;
+        }
 
 
 

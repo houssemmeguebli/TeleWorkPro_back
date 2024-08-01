@@ -20,7 +20,7 @@ namespace TTProject.Core.Entities
     }
     public enum UserStatus
     {
-        Inactive , Active 
+        Inactive , Active , Suspended
     }
 
 
@@ -35,9 +35,7 @@ namespace TTProject.Core.Entities
 
         public DateTime dateOfbirth { get; set; }
         public Gender Gender { get; set; }
-        public UserStatus Status { get; set; }
-
-
+        public UserStatus UserStatus { get; set; }
         public IList<TTRequest>? Requests { get; set; }
     }
 }

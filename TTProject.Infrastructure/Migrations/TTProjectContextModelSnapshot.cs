@@ -252,6 +252,9 @@ namespace TTProject.Infrastructure.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
+                    b.Property<int>("UserStatus")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("dateOfbirth")
                         .HasColumnType("datetime2");
 

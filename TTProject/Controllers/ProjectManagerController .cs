@@ -70,14 +70,33 @@ namespace TTProject.Presentation.Controllers
             {
                 return NotFound("There is no user with this id");
             }
+            if (existingProjectManager.role != null)
+                existingProjectManager.role = updateprojectManager.role;
 
-            existingProjectManager.PhoneNumber = updateprojectManager.PhoneNumber;
-            existingProjectManager.role = updateprojectManager.role;
-            existingProjectManager.department = updateprojectManager.department;
-            existingProjectManager.firstName = updateprojectManager.firstName;
-            existingProjectManager.lastName = updateprojectManager.lastName;
-            existingProjectManager.Gender = updateprojectManager.Gender;
-            existingProjectManager.dateOfbirth = updateprojectManager.dateOfbirth;
+            if (existingProjectManager.department != null)
+                existingProjectManager.department = updateprojectManager.department;
+
+            if (existingProjectManager.firstName != null)
+                existingProjectManager.firstName = updateprojectManager.firstName;
+
+            if (existingProjectManager.lastName != null)
+                existingProjectManager.lastName = updateprojectManager.lastName;
+
+            if (existingProjectManager.projectName != null)
+                existingProjectManager.projectName = updateprojectManager.projectName;
+
+            if(existingProjectManager.PhoneNumber != null)
+                existingProjectManager.PhoneNumber = updateprojectManager.PhoneNumber;
+
+            if (existingProjectManager.Gender != null)
+                existingProjectManager.Gender = updateprojectManager.Gender;
+
+            if (existingProjectManager.dateOfbirth != null)
+                existingProjectManager.dateOfbirth = updateprojectManager.dateOfbirth;
+
+            if (existingProjectManager.UserStatus != null)
+                existingProjectManager.UserStatus = updateprojectManager.UserStatus;
+
 
             await _projectManagerService.UpdateAsync(existingProjectManager);
 
@@ -112,5 +131,16 @@ namespace TTProject.Presentation.Controllers
             await _projectManagerService.DeleteAsync(projectManagers);
             return NoContent();
         }
+        [HttpGet("{managerId}/requests")]
+        public async Task<ActionResult<IEnumerable<Request>>> GetRequestsByEmployeeId(long managerId)
+        {
+            var requests = await _projectManagerService.GetRequestsByManagerIdAsync(managerId);
+            if (requests == null || !requests.Any())
+            {
+                return NotFound($"No requests found for employee with ID {managerId}");
+            }
+            return Ok(requests);
+        }
+
     }
 }

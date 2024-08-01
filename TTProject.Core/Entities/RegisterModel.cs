@@ -18,6 +18,8 @@ namespace TTProject.Core.Entities
         public string projectName { get; set; }
         public string position { get; set; }
         public Gender Gender { get; set; }
+
+        public UserStatus UserStatus { get; set; }
         public DateTime dateOfbirth { get; set; }
 
     }
