@@ -1,4 +1,5 @@
 ﻿using Azure.Core;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using TTProject.Application.Services;
@@ -10,7 +11,7 @@ namespace TTProject.Presentation.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-
+    [Authorize]
     public class ProjectManagerController : ControllerBase
     {
         private readonly IProjectManagerService _projectManagerService;

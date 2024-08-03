@@ -1,22 +1,24 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TTProject.Core.Entities;
-using Microsoft.AspNetCore.Identity;
-using TTProject.Infrastructure.Data;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System.Text;
 using TTProject.Application.Services;
+using TTProject.Core.Entities;
 using TTProject.Core.Interfaces;
-using TTProject.Infrastructure.Repositories;
 using TTProject.Infrastructure;
+using TTProject.Infrastructure.Data;
+using TTProject.Infrastructure.Repositories;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure les services MVC
+// Configure services
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
@@ -25,18 +27,50 @@ builder.Services.AddControllers()
 
 // Configure Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
 
-// Configure le DbContext pour Entity Framework Core
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = @"JWT Authorization header using the Bearer scheme.
+                      Enter 'Bearer' [space] and then your token in the text input below.
+                      Example: 'Bearer 12345abcdef'",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                },
+                Scheme = "oauth2",
+                Name = "Bearer",
+                In = ParameterLocation.Header
+            },
+            new List<string>()
+        }
+    });
+});
+
+// Configure DbContext for Entity Framework Core
 builder.Services.AddDbContext<TTProjectContextOld>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configure les services d'Identity avec la classe User personnalisée
+// Configure Identity services with custom User class
 builder.Services.AddIdentity<User, IdentityRole<long>>()
     .AddEntityFrameworkStores<TTProjectContextOld>()
     .AddDefaultTokenProviders();
 
-// Configure les services spécifiques
+// Configure application-specific services
 builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IProjectManagerService, ProjectManagerService>();
@@ -55,11 +89,11 @@ builder.Services.AddSingleton<IEmailService>(new EmailService(
     emailSettings["Password"]
 ));
 
-// Ajoutez les services UserManager et SignInManager
+// Add UserManager and SignInManager services
 builder.Services.AddScoped<UserManager<User>>();
 builder.Services.AddScoped<SignInManager<User>>();
 
-// Configure l'authentification JWT
+// Configure JWT authentication
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -87,7 +121,8 @@ builder.Services.AddCors(options =>
         {
             builder.WithOrigins("http://localhost:3000")
                    .AllowAnyHeader()
-                   .AllowAnyMethod();
+                   .AllowAnyMethod()
+                   .AllowCredentials(); // Allow credentials to be included in requests
         });
 });
 
@@ -112,7 +147,7 @@ using (var serviceScope = app.Services.CreateScope())
     await DbInitializer.InitializeAsync(userManager, roleManager);
 }
 
-// Configure le pipeline des requêtes HTTP
+// Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -120,10 +155,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthentication(); // Assurez-vous que le middleware d'authentification est ajouté
-app.UseAuthorization();  // Assurez-vous que le middleware d'autorisation est ajouté
 
+// Apply CORS policy
 app.UseCors("AllowSpecificOrigin");
+
+app.UseAuthentication(); // Ensure the authentication middleware is added
+app.UseAuthorization();  // Ensure the authorization middleware is added
 
 app.MapControllers();
 app.Run();

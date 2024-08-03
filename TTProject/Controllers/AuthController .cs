@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -24,6 +25,7 @@ public class AuthController : ControllerBase
         _configurations = configuration;
     }
 
+    [Authorize]
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterModel model)
     {
@@ -78,13 +80,14 @@ public class AuthController : ControllerBase
 
         return BadRequest(result.Errors);
     }
-
+   
     [HttpPost("logout")]
     public async Task<IActionResult> Logout()
     {
         await _signInManager.SignOutAsync();
         return Ok(new { message = "Successfully logged out." });
     }
+
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginModel model)
     {
@@ -157,7 +160,7 @@ public class AuthController : ControllerBase
 
         return BadRequest(result.Errors);
     }
-
+   
     [HttpGet("user-id")]
     public async Task<IActionResult> GetUserIdByEmail([FromQuery] string email)
     {
