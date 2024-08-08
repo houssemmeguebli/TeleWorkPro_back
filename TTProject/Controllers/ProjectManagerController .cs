@@ -11,7 +11,7 @@ namespace TTProject.Presentation.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize]
+
     public class ProjectManagerController : ControllerBase
     {
         private readonly IProjectManagerService _projectManagerService;
@@ -22,6 +22,7 @@ namespace TTProject.Presentation.Controllers
         }
 
         [HttpGet("{userId}")]
+     
         public async Task<ActionResult<User>> GetUserById(long userId)
         {
             var projectManagers = await _projectManagerService.GetByIdAsync(userId);
@@ -33,6 +34,7 @@ namespace TTProject.Presentation.Controllers
         }
 
         [HttpGet]
+     
         public async Task<ActionResult<IEnumerable<ProjectManager>>> GetAll()
         {
             var projectManagers = await _projectManagerService.GetAllAsync();
@@ -45,6 +47,7 @@ namespace TTProject.Presentation.Controllers
 
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<ProjectManager>> CreateUser(ProjectManager projectManager)
         {
             try
@@ -121,6 +124,7 @@ namespace TTProject.Presentation.Controllers
         }
 
         [HttpDelete("{userId}")]
+        [Authorize]
         public async Task<IActionResult> DeleteProjectManagers(long userId)
         {
             var projectManagers = await _projectManagerService.GetByIdAsync(userId);
@@ -133,6 +137,7 @@ namespace TTProject.Presentation.Controllers
             return NoContent();
         }
         [HttpGet("{managerId}/requests")]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<Request>>> GetRequestsByEmployeeId(long managerId)
         {
             var requests = await _projectManagerService.GetRequestsByManagerIdAsync(managerId);

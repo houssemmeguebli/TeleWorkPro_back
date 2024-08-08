@@ -135,7 +135,7 @@ public class AuthController : ControllerBase
             issuer: _configurations["Jwt:Issuer"],
             audience: _configurations["Jwt:Issuer"],
             claims: claims,
-            expires: DateTime.Now.AddMinutes(30),
+            expires: DateTime.Now.AddDays(30),
             signingCredentials: creds);
 
         // Write and return the token

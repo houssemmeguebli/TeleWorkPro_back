@@ -13,7 +13,6 @@ namespace TTProject.Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;
@@ -24,6 +23,7 @@ namespace TTProject.Presentation.Controllers
         }
 
         [HttpGet("{employeeId}")]
+    
         public async Task<ActionResult<User>> GetUserById(long employeeId)
         {
             var employee = await _employeeService.GetByIdAsync(employeeId);
@@ -35,6 +35,7 @@ namespace TTProject.Presentation.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Employee>> CreateEmployee(Employee employee)
         {
             try
@@ -54,6 +55,7 @@ namespace TTProject.Presentation.Controllers
         }
 
         [HttpGet]
+    
         public async Task<ActionResult<IEnumerable<Employee>>> GetAll()
         {
             var employees = await _employeeService.GetAllAsync();
@@ -109,6 +111,7 @@ public async Task<IActionResult> UpdateUser(long employeeId, Employee updatedEmp
 }
 
         [HttpGet("{employeeId}/requests")]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<Request>>> GetRequestsByEmployeeId(long employeeId)
         {
             var requests = await _employeeService.GetRequestsByEmployeeIdAsync(employeeId);
@@ -120,6 +123,7 @@ public async Task<IActionResult> UpdateUser(long employeeId, Employee updatedEmp
         }
 
         [HttpDelete("{userId}")]
+        [Authorize]
         public async Task<IActionResult> DeleteEmployee(long userId)
         {
             var employees = await _employeeService.GetByIdAsync(userId);
