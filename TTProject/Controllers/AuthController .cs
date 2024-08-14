@@ -24,6 +24,7 @@ using System.Threading.Tasks;
 using TTProject.Core.Entities;
 using TTProject.Core.Interfaces;
 using static System.Net.Mime.MediaTypeNames;
+using Microsoft.AspNetCore.RateLimiting;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -48,6 +49,7 @@ public class AuthController : ControllerBase
 
     [Authorize]
     [HttpPost("register")]
+    [EnableRateLimiting("fixed")]
     public async Task<IActionResult> Register([FromBody] RegisterModel model)
     {
         User user;
@@ -103,6 +105,7 @@ public class AuthController : ControllerBase
     }
    
     [HttpPost("logout")]
+    [EnableRateLimiting("fixed")]
     public async Task<IActionResult> Logout()
     {
         await _signInManager.SignOutAsync();
@@ -110,6 +113,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("login")]
+    [EnableRateLimiting("fixed")]
     public async Task<IActionResult> Login([FromBody] LoginModel model)
     {
         var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, lockoutOnFailure: true);
@@ -164,6 +168,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("change-password/{userId}")]
+    [EnableRateLimiting("fixed")]
     public async Task<IActionResult> ChangePassword(long userId, [FromBody] ChangePasswordModel model)
     {
         if (!ModelState.IsValid)
@@ -211,6 +216,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("forgot-password")]
+    [EnableRateLimiting("fixed")]
     public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordModel model)
     {
         if (string.IsNullOrWhiteSpace(model.Email))
@@ -312,6 +318,7 @@ public class AuthController : ControllerBase
 
 
     [HttpPost("reset-password")]
+    [EnableRateLimiting("fixed")]
     public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordModel model)
     {
         if (string.IsNullOrWhiteSpace(model.Email) ||

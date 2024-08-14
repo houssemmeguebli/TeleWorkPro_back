@@ -8,11 +8,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Azure.Core;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.RateLimiting;
+
 
 namespace TTProject.Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+ 
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;
@@ -36,6 +39,7 @@ namespace TTProject.Presentation.Controllers
 
         [HttpPost]
         [Authorize]
+        [EnableRateLimiting("fixed")]
         public async Task<ActionResult<Employee>> CreateEmployee(Employee employee)
         {
             try
@@ -55,7 +59,7 @@ namespace TTProject.Presentation.Controllers
         }
 
         [HttpGet]
-    
+      
         public async Task<ActionResult<IEnumerable<Employee>>> GetAll()
         {
             var employees = await _employeeService.GetAllAsync();
@@ -66,8 +70,10 @@ namespace TTProject.Presentation.Controllers
             return Ok(employees);
         }
 
+
        [HttpPut("{employeeId}")]
-public async Task<IActionResult> UpdateUser(long employeeId, Employee updatedEmployee)
+        [EnableRateLimiting("fixed")]
+        public async Task<IActionResult> UpdateUser(long employeeId, Employee updatedEmployee)
 {
     var existingEmployee = await _employeeService.GetByIdAsync(employeeId);
     if (existingEmployee == null)
@@ -124,6 +130,7 @@ public async Task<IActionResult> UpdateUser(long employeeId, Employee updatedEmp
 
         [HttpDelete("{userId}")]
         [Authorize]
+        [EnableRateLimiting("fixed")]
         public async Task<IActionResult> DeleteEmployee(long userId)
         {
             var employees = await _employeeService.GetByIdAsync(userId);

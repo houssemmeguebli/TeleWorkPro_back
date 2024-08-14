@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using TTProject.Application.Services;
 using TTProject.Core.Entities;
 using TTProject.Core.Interfaces;
@@ -47,6 +48,7 @@ namespace TTProject.Presentation.Controllers
         }
         */
         [HttpPost("{userRole}")]
+        [EnableRateLimiting("fixed")]
         public async Task<ActionResult<TTRequest>> CreateRequest(TTRequest request,int userRole)
         {
             if (!ModelState.IsValid)
@@ -88,6 +90,7 @@ namespace TTProject.Presentation.Controllers
             return Ok(request);
         }
         [HttpDelete("{requestId}")]
+        [EnableRateLimiting("fixed")]
         public async Task<IActionResult> DeleteRequest(long requestId)
         {
             var request = await _requestService.GetByIdAsync(requestId);
@@ -100,6 +103,7 @@ namespace TTProject.Presentation.Controllers
             return NoContent();
         }
         [HttpPut("{requestId}")]
+        [EnableRateLimiting("fixed")]
         public async Task<IActionResult> UpdateRequest(long requestId, TTRequest updatedRequest)
         {
             var existingRequest = await _requestService.GetByIdAsync(requestId);
@@ -148,6 +152,7 @@ namespace TTProject.Presentation.Controllers
         }
         */
         [HttpPost("requests/{requestId}/status")]
+        [EnableRateLimiting("fixed")]
         public async Task<ActionResult> UpdateRequestStatus(long requestId, [FromBody] TTRequest request)
         {
             var existingRequest = await _requestService.GetByIdAsync(requestId);

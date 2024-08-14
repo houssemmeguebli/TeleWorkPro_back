@@ -6,15 +6,16 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Collections.Generic;
 using System.Text;
+using System.Threading.RateLimiting;
 using TTProject.Application.Services;
 using TTProject.Core.Entities;
 using TTProject.Core.Interfaces;
 using TTProject.Infrastructure;
 using TTProject.Infrastructure.Data;
 using TTProject.Infrastructure.Repositories;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -136,6 +137,20 @@ builder.Services.AddAuthorization(options =>
         policy.RequireRole("Employee"));
 });
 
+// Configure Rate Limiting
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+    options.AddPolicy("fixed", httpContext =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            partitionKey: httpContext.Connection.RemoteIpAddress?.ToString(),
+            factory: partiction => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 5,
+                Window = TimeSpan.FromSeconds(10)
+            }));
+});
+
 var app = builder.Build();
 
 // Initialize the database with roles
@@ -158,6 +173,9 @@ app.UseHttpsRedirection();
 
 // Apply CORS policy
 app.UseCors("AllowSpecificOrigin");
+
+// Add rate limiting middleware
+app.UseRateLimiter();
 
 app.UseAuthentication(); // Ensure the authentication middleware is added
 app.UseAuthorization();  // Ensure the authorization middleware is added

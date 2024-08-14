@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using TTProject.Core.Interfaces;
 
 [ApiController]
 [Authorize]
 [Route("api/[controller]")]
+
 public class EmailController : ControllerBase
 {
     private readonly IEmailService _emailService;
@@ -16,6 +18,7 @@ public class EmailController : ControllerBase
 
     [HttpPost]
     [Route("send")]
+    [EnableRateLimiting("fixed")]
     public async Task<IActionResult> SendEmail([FromBody] EmailRequest request)
     {
         await _emailService.SendEmailAsync(request.ToEmail, request.Subject, request.Message);
@@ -23,6 +26,7 @@ public class EmailController : ControllerBase
     }
    
     [HttpPost("sendList")]
+    [EnableRateLimiting("fixed")]
     public async Task<IActionResult> SendEmail([FromBody] EmailRequestList emailRequest)
     {
         if (emailRequest.Emails == null || emailRequest.Emails.Count == 0)

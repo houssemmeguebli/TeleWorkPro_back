@@ -1,6 +1,7 @@
 ﻿using Azure.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.Tasks;
 using TTProject.Application.Services;
 using TTProject.Core.Entities;
@@ -11,7 +12,7 @@ namespace TTProject.Presentation.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-
+   
     public class ProjectManagerController : ControllerBase
     {
         private readonly IProjectManagerService _projectManagerService;
@@ -48,6 +49,7 @@ namespace TTProject.Presentation.Controllers
 
         [HttpPost]
         [Authorize]
+        [EnableRateLimiting("fixed")]
         public async Task<ActionResult<ProjectManager>> CreateUser(ProjectManager projectManager)
         {
             try
@@ -67,6 +69,7 @@ namespace TTProject.Presentation.Controllers
         }
 
         [HttpPut("{userId}")]
+        [EnableRateLimiting("fixed")]
         public async Task<IActionResult> UpdateProjectManagers(long userId, ProjectManager updateprojectManager)
         {
             var existingProjectManager = await _projectManagerService.GetByIdAsync(userId);
@@ -125,6 +128,7 @@ namespace TTProject.Presentation.Controllers
 
         [HttpDelete("{userId}")]
         [Authorize]
+        [EnableRateLimiting("fixed")]
         public async Task<IActionResult> DeleteProjectManagers(long userId)
         {
             var projectManagers = await _projectManagerService.GetByIdAsync(userId);
@@ -138,6 +142,7 @@ namespace TTProject.Presentation.Controllers
         }
         [HttpGet("{managerId}/requests")]
         [Authorize]
+
         public async Task<ActionResult<IEnumerable<Request>>> GetRequestsByEmployeeId(long managerId)
         {
             var requests = await _projectManagerService.GetRequestsByManagerIdAsync(managerId);
