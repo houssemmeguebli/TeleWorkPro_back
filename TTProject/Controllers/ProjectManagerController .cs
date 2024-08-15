@@ -140,9 +140,9 @@ namespace TTProject.Presentation.Controllers
             await _projectManagerService.DeleteAsync(projectManagers);
             return NoContent();
         }
+
         [HttpGet("{managerId}/requests")]
         [Authorize]
-
         public async Task<ActionResult<IEnumerable<Request>>> GetRequestsByEmployeeId(long managerId)
         {
             var requests = await _projectManagerService.GetRequestsByManagerIdAsync(managerId);

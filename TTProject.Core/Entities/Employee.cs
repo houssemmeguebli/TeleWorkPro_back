@@ -9,5 +9,8 @@ namespace TTProject.Core.Entities
     public class Employee : User
     {
         public string position { get; set; }
+        public IList<TTRequest>? Requests { get; set; }
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Azure.Core;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TTProject.Core.Entities;
@@ -19,6 +20,18 @@ namespace TTProject.Infrastructure.Data
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(TTProjectContextOld).Assembly);
             base.OnModelCreating(modelBuilder);
-        }
+
+                    modelBuilder.Entity<TTRequest>()
+               .HasOne(r => r.Employee)
+               .WithMany(e => e.Requests)
+               .HasForeignKey(r => r.EmployeeId)
+               .OnDelete(DeleteBehavior.Restrict);
+
+                    modelBuilder.Entity<TTRequest>()
+                        .HasOne(r => r.ProjectManager)
+                        .WithMany(pm => pm.Requests)
+                        .HasForeignKey(r => r.ProjectManagerId)
+                        .OnDelete(DeleteBehavior.Restrict);
+                }
     }
 }

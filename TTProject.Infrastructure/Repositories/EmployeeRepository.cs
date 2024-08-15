@@ -22,7 +22,7 @@ namespace TTProject.Infrastructure.Repositories
         public async Task<IEnumerable<TTRequest>> GetRequestsByEmployeeIdAsync(long employeeId)
         {
             var requests = await _context.Requests
-                .Where(r => r.userId == employeeId)
+                .Where(r => r.EmployeeId == employeeId)
                 .ToListAsync();
 
             if (requests == null || !requests.Any())

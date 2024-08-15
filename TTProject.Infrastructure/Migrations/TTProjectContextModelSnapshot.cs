@@ -163,6 +163,12 @@ namespace TTProject.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("RequestId"));
 
+                    b.Property<long?>("EmployeeId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("ProjectManagerId")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("comment")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -179,12 +185,11 @@ namespace TTProject.Infrastructure.Migrations
                     b.Property<int>("status")
                         .HasColumnType("int");
 
-                    b.Property<long>("userId")
-                        .HasColumnType("bigint");
-
                     b.HasKey("RequestId");
 
-                    b.HasIndex("userId");
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("ProjectManagerId");
 
                     b.ToTable("Requests");
                 });
@@ -371,16 +376,27 @@ namespace TTProject.Infrastructure.Migrations
 
             modelBuilder.Entity("TTProject.Core.Entities.TTRequest", b =>
                 {
-                    b.HasOne("TTProject.Core.Entities.User", "User")
+                    b.HasOne("TTProject.Core.Entities.Employee", "Employee")
                         .WithMany("Requests")
-                        .HasForeignKey("userId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
-                    b.Navigation("User");
+                    b.HasOne("TTProject.Core.Entities.ProjectManager", "ProjectManager")
+                        .WithMany("Requests")
+                        .HasForeignKey("ProjectManagerId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("ProjectManager");
                 });
 
-            modelBuilder.Entity("TTProject.Core.Entities.User", b =>
+            modelBuilder.Entity("TTProject.Core.Entities.Employee", b =>
+                {
+                    b.Navigation("Requests");
+                });
+
+            modelBuilder.Entity("TTProject.Core.Entities.ProjectManager", b =>
                 {
                     b.Navigation("Requests");
                 });

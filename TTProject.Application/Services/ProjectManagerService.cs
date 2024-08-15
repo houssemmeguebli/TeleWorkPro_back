@@ -21,5 +21,10 @@ namespace TTProject.Application.Services
         {
             return await _projectManagerRepository.GetRequestsByManagerIdAsync(managerId);
         }
+        public async Task<IEnumerable<TTRequest>> GetRequestsByProojectManagerIdAsync(long projectManagerId)
+        {
+
+            return await _projectManagerRepository.GetRequestsByProojectManagerIdAsync(projectManagerId);
+        }
     }
 }

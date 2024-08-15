@@ -26,10 +26,15 @@ namespace TTProject.Core.Entities
         public string? note { get; set; }
 
 
-        [ForeignKey(nameof(User))]
-        public long userId { get; set; }
+        [ForeignKey(nameof(Employee))]
+        public long? EmployeeId { get; set; }
 
-        public User? User { get; set; }
+        public Employee? Employee { get; set; }
+
+        [ForeignKey(nameof(ProjectManager))]
+        public long? ProjectManagerId { get; set; }
+
+        public ProjectManager? ProjectManager { get; set; }
 
 
     }

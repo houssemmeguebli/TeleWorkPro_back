@@ -36,7 +36,6 @@ namespace TTProject.Core.Entities
         public DateTime dateOfbirth { get; set; }
         public Gender Gender { get; set; }
         public UserStatus UserStatus { get; set; }
-        public IList<TTRequest>? Requests { get; set; }
 
         public string? PasswordResetCode { get; set; }  
         public DateTime? PasswordResetCodeExpiration { get; set; }  

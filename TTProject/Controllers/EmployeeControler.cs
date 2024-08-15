@@ -59,7 +59,6 @@ namespace TTProject.Presentation.Controllers
         }
 
         [HttpGet]
-      
         public async Task<ActionResult<IEnumerable<Employee>>> GetAll()
         {
             var employees = await _employeeService.GetAllAsync();
@@ -117,7 +116,7 @@ namespace TTProject.Presentation.Controllers
 }
 
         [HttpGet("{employeeId}/requests")]
-        [Authorize]
+
         public async Task<ActionResult<IEnumerable<Request>>> GetRequestsByEmployeeId(long employeeId)
         {
             var requests = await _employeeService.GetRequestsByEmployeeIdAsync(employeeId);

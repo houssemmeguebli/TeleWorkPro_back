@@ -11,7 +11,6 @@ namespace TTProject.Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class RequestController : ControllerBase
     {
         private readonly IRequestService _requestService;
@@ -117,6 +116,7 @@ namespace TTProject.Presentation.Controllers
             existingRequest.endDate = updatedRequest.endDate;
             existingRequest.comment = updatedRequest.comment;
             existingRequest.note = updatedRequest.note;
+            existingRequest.ProjectManagerId = updatedRequest.ProjectManagerId;
 
 
             await _requestService.UpdateAsync(existingRequest);
