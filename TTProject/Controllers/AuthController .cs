@@ -47,7 +47,8 @@ public class AuthController : ControllerBase
         _emailService = emailService;
     }
 
-    [Authorize]
+
+    [Authorize(Policy = "ProjectManagerOnly")]
     [HttpPost("register")]
     [EnableRateLimiting("fixed")]
     public async Task<IActionResult> Register([FromBody] RegisterModel model)

@@ -11,6 +11,7 @@ namespace TTProject.Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class RequestController : ControllerBase
     {
         private readonly IRequestService _requestService;

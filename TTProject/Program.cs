@@ -62,6 +62,19 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ProjectManagerOnly", policy =>
+    {
+        policy.RequireRole("ProjectManager");
+    });
+    options.AddPolicy("EmployeeOnly", policy =>
+    {
+        policy.RequireRole("Employee");
+    });
+});
+
+
 // Configure DbContext for Entity Framework Core
 builder.Services.AddDbContext<TTProjectContextOld>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

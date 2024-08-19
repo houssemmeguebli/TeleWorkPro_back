@@ -48,7 +48,7 @@ namespace TTProject.Presentation.Controllers
 
 
         [HttpPost]
-        [Authorize]
+        [Authorize(Policy = "ProjectManagerOnly")]
         [EnableRateLimiting("fixed")]
         public async Task<ActionResult<ProjectManager>> CreateUser(ProjectManager projectManager)
         {
@@ -127,7 +127,7 @@ namespace TTProject.Presentation.Controllers
         }
 
         [HttpDelete("{userId}")]
-        [Authorize]
+        [Authorize(Policy = "ProjectManagerOnly")]
         [EnableRateLimiting("fixed")]
         public async Task<IActionResult> DeleteProjectManagers(long userId)
         {
@@ -142,7 +142,7 @@ namespace TTProject.Presentation.Controllers
         }
 
         [HttpGet("{managerId}/requests")]
-        [Authorize]
+        [Authorize(Policy = "ProjectManagerOnly")]
         public async Task<ActionResult<IEnumerable<Request>>> GetRequestsByEmployeeId(long managerId)
         {
             var requests = await _projectManagerService.GetRequestsByManagerIdAsync(managerId);
