@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BrzWU4PGcm5IB7OAT0MC8qd6T6MzR0DJfuHkO0Ay91qVIEL/FxvgXGUC37uRqJaeR6jI8EdU03qHcGiWHoacGA==",
+  "dgSpecHash": "YQt6WyVjSP/qv3EYPGNb+4zI8N3uV9B/oBoluR460Ng3DmPL1GJeESBBorWw5kRkVthV/toSL7NtCVK1DcPZmw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Infrastructure\\TTProject.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\megbl\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\megbl\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

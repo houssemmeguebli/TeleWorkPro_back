@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj",
+      "projectUniqueName": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Core\\TTProject.Core.csproj",
       "projectName": "TTProject.Core",
-      "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\TTProject.Core.csproj",
+      "projectPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Core\\TTProject.Core.csproj",
       "packagesPath": "C:\\Users\\megbl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\New\\TTProject_back-main\\TTProject.Core\\obj\\",
+      "outputPath": "C:\\Users\\megbl\\Desktop\\Stage ingenieur\\GitHub\\TTProject_back\\TTProject.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
